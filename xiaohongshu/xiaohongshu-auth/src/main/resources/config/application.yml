@@ -1,0 +1,11 @@
+server:
+  port:8080 #启动项目的端口
+
+spring:
+  profiles:
+    active: dev #默认激活dev本地开发环境
+
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #表示resource下的maper包
+  #以及它所有子目录下的各个以xml结尾的文件

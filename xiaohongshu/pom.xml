@@ -1,0 +1,198 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.zx</groupId>
+  <artifactId>xiaohongshu</artifactId>
+  <version>${revision}</version>
+<!--  <version>1.0-SNAPSHOT</version>-->
+
+ <!-- 项目名称-->
+  <name>${project.artifactId}</name>
+<!--  项目描述-->
+  <description>小青书,基于spring cloud alibaba微服务框架</description>
+<!--  项目打包方式-->
+  <packaging>pom</packaging>
+
+<!-- 子模块管理 -->
+    <modules>
+    <!-- 认证服务 -->
+        <module>xiaohongshu-auth</module>
+        <module>xiaohongshu-framework</module>
+    </modules>
+
+  <properties>
+     <!--  项目版本号  -->
+    <revision>0.0.1-SNAPSHOT</revision>
+     <!-- JDK版本 -->
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+     <!-- 项目编码 -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- maven相关版本号 -->
+      <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+     <!-- 依赖包版本号-->
+    <lombok.version>1.18.30</lombok.version>
+     <!-- 依赖包版本 -->
+    <spring-boot.version>3.0.2</spring-boot.version>
+    <spring-cloud-alibaba.version>2022.0.0.0</spring-cloud-alibaba.version>
+    <sping-cloud.version>2022.0.0</sping-cloud.version>
+    <!-- jackson-->
+      <jackson-version>2.16.1</jackson-version>
+    <!-- mysql连接-->
+    <mysql-connection-java.version>8.0.29</mysql-connection-java.version>
+    <!-- junit版本 -->
+     <junit-platform-launcher.version>1.9.2</junit-platform-launcher.version>
+  </properties>
+
+  <!-- 通一管理依赖 -->
+  <dependencyManagement>
+        <dependencies>
+
+            <!-- 添加业start项目中开发好的 日志组件 -->
+            <dependency>
+                <groupId>com.zx</groupId>
+                <artifactId>xiaohongshu-spring-boot-starter-biz-operationlog</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!--  添加framework里common写好的maven  -->
+            <dependency>
+                <groupId>com.zx</groupId>
+                <artifactId>xiaohongshu-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+
+            <!-- spring boot 官方依赖管理-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring cloud alibaba 官方依赖管理   -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- spring cloud 官方依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${sping-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+   <!-- 避免编写哪些冗余的java样板式代码，如get set 等 -->
+          <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+          </dependency>
+
+    <!--  jackson-->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-version}</version>
+            </dependency>
+
+     <!--  mybatis -->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+     <!--  mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connection-java.version}</version>
+            </dependency>
+
+     <!--  添加单元测试 -->
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-launcher</artifactId>
+                <version>${junit-platform-launcher.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+  </dependencyManagement>
+
+
+  <build>
+      <!-- 统一插件管理 -->
+      <pluginManagement>
+          <plugins>
+
+            <plugin>
+              <groupId>org.springframework.boot</groupId>
+              <artifactId>spring-boot-maven-plugin</artifactId>
+              <version>${spring-boot.version}</version>
+              <executions>
+                <execution>
+                   <id>repackage</id>
+                   <goals>
+                     <goal>repackage</goal>      <!--将依赖jar一起打包-->
+                   </goals>
+                </execution>
+              </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+          </plugins>
+      </pluginManagement>
+  </build>
+
+<!--添加华为云，阿里云，maven中央仓库，提升依赖下载速度-->
+    <repositories>
+
+        <repository>
+            <id>huaweicloud</id>
+            <name>huawei</name>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+        </repository>
+
+        <repository>
+            <id>aliyunmaven</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+
+    </repositories>
+
+
+</project>

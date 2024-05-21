@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--  项目版本号 通过基础父类获得,无需再次声明  -->
+<!--    <revision>1.0-SNAPSHOT</revision>-->
+
+ <!-- 指定父项目 -->
+    <parent>
+        <groupId>com.zx</groupId>
+        <artifactId>xiaohongshu</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+<!--  指定打包方式-->
+    <packaging>jar</packaging>
+
+    <artifactId>xiaohongshu-auth</artifactId>
+    <name>${project.artifactId}</name>
+    <description>小红书:认证服务 登录注册账号注销等</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.zx</groupId>
+            <artifactId>xiaohongshu-spring-boot-starter-biz-operationlog</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zx</groupId>
+            <artifactId>xiaohongshu-common</artifactId>
+        </dependency>
+
+       <!-- 引用父类的denpendenciesManager的-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--  mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--  mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+         <!-- junit-->
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--引用父类pluginManage-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
