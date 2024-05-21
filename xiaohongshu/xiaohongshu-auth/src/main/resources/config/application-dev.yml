@@ -4,7 +4,37 @@ spring:
     url: jdbc:mysql://localhost:3306/xiaohongshu?serverTimezone=Asia/Shanghai&useSSL=false
     username: root
     password: 123456
-
+    #配置Druid连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5 #初始化线程池大小
+      min-idle: 5 #最小连接池数量
+      max-active: 20 #最大连接池数量
+      max-wait: 60000 #连接时最大等待时间
+      test-while-idle: true #连接空闲时是否执行检查。
+      time-between-eviction-runs-millis: 60000 #配置多久进行异常检测，检测需要关闭的连接
+      min-evictable-idle-time-millis: 300000 #配置一个连接池中最小的生存时间
+      max-evictable-idle-time-millis: 900000 #配置连接池中最大生存时间
+      validation-query: SELECT 1 FROM DUAL #配置测试连接是否可用的查询sql
+      test-on-borrow: false #是否开启获取时是否测试连接的可用性
+      test-on-return: false #是否开启返回连接池时是否测试连接的可用性
+      pool-prepared-statement: false #是否缓存preparedstatement
+      web-stat-filter:
+        enabled: true  #开启后台监控功能
+      stat-view-servlet:
+        enabled: true  #开启后台监控功能
+        url-pattern: /druid/* #配置监控后访问路径
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          enabled: true  #开启统计功能
+          log-slow-sql: true #开启慢sql记录
+          slow-sql-millis: 2000 #若执行好事大于2s，则视为慢sql
+          merge-sql: true #表示是否开启 SQL 合并功能。
+        wall: #防火墙
+          config:
+            multi-statement-allow: true  #是否允许多条数据库查询
 logging:
   level:
     com.zx.xiaohongshu.auth.domain.mapper: debug #让auth项目里的mapper包中的接口打印日志

@@ -44,6 +44,8 @@
     <mysql-connection-java.version>8.0.29</mysql-connection-java.version>
     <!-- junit版本 -->
      <junit-platform-launcher.version>1.9.2</junit-platform-launcher.version>
+    <!-- druid版本 -->
+      <druid.version>1.2.21</druid.version>
   </properties>
 
   <!-- 通一管理依赖 -->
@@ -130,6 +132,13 @@
                 <artifactId>junit-platform-launcher</artifactId>
                 <version>${junit-platform-launcher.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+     <!--  Druid数据库连接池   -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>${druid.version}</version>
             </dependency>
 
         </dependencies>
