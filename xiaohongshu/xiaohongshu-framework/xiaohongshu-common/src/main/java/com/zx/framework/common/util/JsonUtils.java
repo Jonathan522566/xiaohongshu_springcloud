@@ -13,10 +13,11 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
+//输出日志类
 public class JsonUtils {
 
     //从Java对象创建JSON. 从Java对象生成JSON的过程也被称为序列化Java对象到JSON
-    private static final ObjectMapper OBJECT_MAPPER=new ObjectMapper();
+    private static  ObjectMapper OBJECT_MAPPER=new ObjectMapper();
 
     static {
         //OBJECT_MAPPER.configure设置日期格式、设置序列化/反序列化的特性  false
@@ -28,21 +29,29 @@ public class JsonUtils {
         OBJECT_MAPPER.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS,false);
 
         //JavaTimeModule用于指定序列化和反序列化规则
-        JavaTimeModule javaTimeModule=new JavaTimeModule();
+       // JavaTimeModule javaTimeModule=new JavaTimeModule();
         //支持LocalDateTime
-        javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DateConstants.Y_M_D_H_M_S_FORMAT)));
-        javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DateConstants.Y_M_D_H_M_S_FORMAT)));
+       // javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(DateConstants.Y_M_D_H_M_S_FORMAT)));
+       // javaTimeModule.addDeserializer(LocalDateTime.class, new LocalDateTimeDeserializer(DateTimeFormatter.ofPattern(DateConstants.Y_M_D_H_M_S_FORMAT)));
 
 
         OBJECT_MAPPER.registerModules(new JavaTimeModule()); //解决localdatatime序列化问题
     }
 
     /**
+     * 初始化：统一使用springboot个性化服务配置objectmapper
+     * @param objectMapper
+     */
+    public static void init(ObjectMapper objectMapper){
+      OBJECT_MAPPER=objectMapper;
+    }
+
+
+    /**
      * 将对象转成json字符串
      * @param obj
      * @return
      */
-
    // @SneakyThrows:
     // 这是 Lombok 提供的一个注解，用于简化异常处理。
     // 它会将被标注的方法中的受检异常转换为不受检异常，使得代码看起来更加简洁。

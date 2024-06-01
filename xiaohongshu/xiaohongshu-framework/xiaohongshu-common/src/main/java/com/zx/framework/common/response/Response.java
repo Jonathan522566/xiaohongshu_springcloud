@@ -9,6 +9,7 @@ import java.io.Serializable;
 //一个类只有实现了Serializable接口，它的对象才能被序列化。
 //序列化:字符变字节
 
+//poseman以及前端返回包装类
 @Data
 public class Response<T> implements Serializable {
     //是否成功,默认为true

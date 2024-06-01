@@ -21,6 +21,7 @@
         <module>xiaohongshu-common</module>
          <!--  接口日志类 -->
         <module>xiaohongshu-spring-boot-starter-biz-operationlog</module>
+        <module>xiaohongshu-spring-boot-starter-jackson</module>
     </modules>
 
 </project>

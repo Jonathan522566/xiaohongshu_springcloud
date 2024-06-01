@@ -3,7 +3,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/xiaohongshu?serverTimezone=Asia/Shanghai&useSSL=false
     username: root
-    password: 123456
+    password: BI54jl7xs6m9mVkgSbuMxj8Mz8HpKnWCoxh649Xyc7PPXrHKakso4kSUqP0pueXnMSdvUZWzITaQHtqE8jSgZg==
     #配置Druid连接池
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -16,6 +16,7 @@ spring:
       min-evictable-idle-time-millis: 300000 #配置一个连接池中最小的生存时间
       max-evictable-idle-time-millis: 900000 #配置连接池中最大生存时间
       validation-query: SELECT 1 FROM DUAL #配置测试连接是否可用的查询sql
+      connectionProperties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALjZOsUCaWi62vllH5a2VGVLMjIu0KhVb+AwAgSlaxhwizEHtDbG1BdGefuTqZvAzSbAfnwGK9DIzhSZPtj/0a0CAwEAAQ==
       test-on-borrow: false #是否开启获取时是否测试连接的可用性
       test-on-return: false #是否开启返回连接池时是否测试连接的可用性
       pool-prepared-statement: false #是否缓存preparedstatement
@@ -27,6 +28,8 @@ spring:
         login-username: admin
         login-password: admin
       filter:
+        config:
+          enabled: true
         stat:
           enabled: true  #开启统计功能
           log-slow-sql: true #开启慢sql记录

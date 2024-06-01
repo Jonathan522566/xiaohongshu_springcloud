@@ -36,7 +36,7 @@ class XiaohongshuAuthApplicationTests {
     @Test
     void testSelect(){
         //查询主键ID为4的记录
-        UserDO userDO=userDOMapper.selectByPrimarykey(1L);
+        UserDO userDO=userDOMapper.selectByPrimaryKey(1L);
         log.info("User:{}", JsonUtils.toJsonString(userDO));
     }
 

@@ -1,0 +1,17 @@
+2024-06-01 12:52:34.654 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 7964 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu)
+2024-06-01 12:52:34.656 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-01 12:52:35.763 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-01 12:52:35.773 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-01 12:52:35.773 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-01 12:52:35.848 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-01 12:52:35.848 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1152 ms
+2024-06-01 12:52:36.242 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-01 12:52:36.483 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-01 12:52:36.752 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-01 12:52:36.758 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 2.662 seconds (process running for 3.217)
+2024-06-01 12:52:55.431 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-01 12:52:55.431 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-01 12:52:55.432 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-01 12:52:55.566 [http-nio-8080-exec-1] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /test2 request error,errorCode: AUTH-10001,errorMessage: nickName 昵称不能为空,当前值:''';
+2024-06-01 12:53:10.067 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-01 12:53:10.073 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
