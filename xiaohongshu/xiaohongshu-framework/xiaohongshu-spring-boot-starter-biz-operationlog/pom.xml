@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 指定父项目-->
+    <parent>
+        <groupId>com.zx</groupId>
+        <artifactId>xiaohongshu-framework</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <!-- 指定打包方式-->
+    <packaging>jar</packaging>
+
+    <artifactId>xiaohongshu-spring-boot-starter-biz-operationlog</artifactId>
+    <name>xiaohongshu-spring-boot-starter-biz-operationlog</name>
+    <description>接口日志组件</description>
+
+    <dependencies>
+
+        <!-- 引入工具类 -->
+        <dependency>
+            <groupId>com.zx</groupId>
+            <artifactId>xiaohongshu-common</artifactId>
+        </dependency>
+
+        <!-- aop切面 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!-- 引入父类中定义的jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+
+       <!-- 解决jackson java8新日期 api序列化的问题-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+        </dependency>
+
+        <!--  mybatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!--  mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>

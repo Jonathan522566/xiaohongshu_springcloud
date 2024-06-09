@@ -1,0 +1,28 @@
+server:
+  port:8080 #启动项目的端口
+
+spring:
+  profiles:
+    active: dev #默认激活dev本地开发环境
+
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+  #表示resource下的maper包
+  #以及它所有子目录下的各个以xml结尾的文件
+
+###################sa token配置##############
+sa-token:
+  #token 名称（同时也是cookic名称）
+  token-name: satoken
+  #token有效期（单位：秒）默认30天，-1代表永久有效
+  timeout: 2592000
+  #token最低活跃频率,如果token超过此手机没有访问系统就会被冻结,默认-1不限制
+  active-timeout: -1
+  #是否允许一个账号多地登录
+  is-concurrent: true
+  #在多人登录时，是否共用一个token
+  is-share: true
+  #token风格
+  token-style: uuid
+  #是否输出日志操作
+  is-log: true

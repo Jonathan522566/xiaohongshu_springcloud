@@ -1,0 +1,91 @@
+2024-06-05 21:41:42.086 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 23764 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu)
+2024-06-05 21:41:42.088 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-05 21:41:43.010 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-05 21:41:43.014 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-05 21:41:43.053 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2024-06-05 21:41:43.827 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-05 21:41:43.839 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 21:41:43.839 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-05 21:41:43.931 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 21:41:43.931 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1780 ms
+2024-06-05 21:41:44.678 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-05 21:41:44.948 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-05 21:41:45.314 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-05 21:41:45.320 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.857 seconds (process running for 4.535)
+2024-06-05 21:46:48.448 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 21:46:48.448 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 21:46:48.449 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 21:48:22.060 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-05 21:48:22.067 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-05 21:48:43.739 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 23544 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu)
+2024-06-05 21:48:43.741 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-05 21:48:44.313 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-05 21:48:44.315 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-05 21:48:44.342 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-06-05 21:48:44.975 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-05 21:48:44.984 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 21:48:44.984 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-05 21:48:45.068 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 21:48:45.069 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1292 ms
+2024-06-05 21:48:45.714 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-05 21:48:45.970 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-05 21:48:46.298 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-05 21:48:46.305 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.108 seconds (process running for 3.532)
+2024-06-05 21:49:26.019 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 21:49:26.019 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 21:49:26.020 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 21:49:34.013 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"13216545"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-05 21:49:34.417 [http-nio-8080-exec-3] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:13216545,已发送验证码:【196633】
+2024-06-05 21:49:34.426 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:423ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-05 21:50:03.858 [http-nio-8080-exec-4] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"13216545"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-05 21:50:03.864 [http-nio-8080-exec-4] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail,errorCode: AUTH-20000,errorMessage: 请求太频繁，请3分钟后再试
+2024-06-05 21:50:32.057 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-05 21:50:32.063 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-05 21:54:27.873 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 12888 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu)
+2024-06-05 21:54:27.874 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-05 21:54:28.475 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-05 21:54:28.478 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-05 21:54:28.506 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-06-05 21:54:29.144 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-05 21:54:29.153 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 21:54:29.154 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-05 21:54:29.236 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 21:54:29.236 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1326 ms
+2024-06-05 21:54:29.863 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-05 21:54:30.079 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-05 21:54:30.383 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-05 21:54:30.390 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.038 seconds (process running for 3.484)
+2024-06-05 21:54:36.627 [http-nio-8080-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 21:54:36.627 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 21:54:36.628 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 21:54:36.787 [http-nio-8080-exec-2] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"13216545"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-05 21:54:37.182 [http-nio-8080-exec-2] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:13216545,已发送验证码:【970011】
+2024-06-05 21:54:37.190 [http-nio-8080-exec-2] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:410ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-05 21:54:40.494 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"13216545"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-05 21:54:40.498 [http-nio-8080-exec-3] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail,errorCode: AUTH-20000,errorMessage: 请求太频繁，请3分钟后再试
+2024-06-05 21:59:47.340 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-05 21:59:47.348 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-05 21:59:50.851 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 6172 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu_springcloud\xiaohongshu)
+2024-06-05 21:59:50.862 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-05 21:59:51.448 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-05 21:59:51.451 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-05 21:59:51.479 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-06-05 21:59:52.123 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-05 21:59:52.133 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-05 21:59:52.133 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-05 21:59:52.218 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-05 21:59:52.219 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1316 ms
+2024-06-05 21:59:52.834 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-05 21:59:53.060 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-05 21:59:53.361 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-05 21:59:53.367 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.049 seconds (process running for 3.473)
+2024-06-05 21:59:59.593 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 21:59:59.593 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-05 21:59:59.594 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-05 21:59:59.746 [http-nio-8080-exec-1] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"13216545"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-05 22:00:00.114 [http-nio-8080-exec-1] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:13216545,已发送验证码:【746339】
+2024-06-05 22:00:00.122 [http-nio-8080-exec-1] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:385ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-05 22:00:02.156 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"13216545"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-05 22:00:02.161 [http-nio-8080-exec-3] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail,errorCode: AUTH-20000,errorMessage: 请求太频繁，请3分钟后再试
+2024-06-05 22:02:34.521 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-05 22:02:34.526 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
