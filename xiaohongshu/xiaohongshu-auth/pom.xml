@@ -95,6 +95,12 @@
             <artifactId>dysmsapi20170525</artifactId>
         </dependency>
 
+        <!-- sa-token整合redis（使用jackson序列化方式） -->
+        <dependency>
+            <groupId>cn.dev33</groupId>
+            <artifactId>sa-token-redis-jackson</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

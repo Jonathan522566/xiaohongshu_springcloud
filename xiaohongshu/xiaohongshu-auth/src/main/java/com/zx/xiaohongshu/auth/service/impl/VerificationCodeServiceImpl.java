@@ -55,7 +55,7 @@ public class VerificationCodeServiceImpl implements VerificationCodeService {
 
         //调用第三方服务器发送
         threadPoolTaskExecutor.submit(()->{
-            String signName="小红书短信测试服务-(zwh请zx喝奶茶)";
+            String signName="阿里云短信测试";
             String templateCode="SMS_154950909";
             String templateParam=String.format("{\"code\":\"%s\"}",verificationCode);
             aliyunSmsHelper.sendMessage(signName,templateCode,phone,templateParam);

@@ -15,10 +15,31 @@ import java.util.Date;
 public class UserDO {
     private Long id;
 
-    private String username;
+    private String xiaohongshuId;
+
+    private String password;
+
+    private String nickname;
+
+    private String avatar;
+
+    private LocalDateTime birthday;
+
+    private String backgroundImg;
+
+    private String phone;
+
+    private Integer sex;
+
+    private Integer status;
+
+    private String introduction;
 
     private LocalDateTime createTime;
 
     private LocalDateTime updateTime;
+
+    private Boolean isDeleted;
+
 
 }
