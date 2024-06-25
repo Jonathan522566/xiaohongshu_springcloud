@@ -1,0 +1,306 @@
+2024-06-18 10:30:31.942 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 12268 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-18 10:30:31.947 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-18 10:30:33.102 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-18 10:30:33.107 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-18 10:30:33.149 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2024-06-18 10:30:34.145 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-18 10:30:34.176 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 10:30:34.177 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-18 10:30:34.342 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 10:30:34.343 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2314 ms
+2024-06-18 10:30:34.535 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-18 10:30:35.086 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-18 10:30:37.184 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-18 10:30:37.193 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 6.417 seconds (process running for 7.825)
+2024-06-18 10:35:08.745 [http-nio-8080-exec-4] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-18 10:35:08.746 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-18 10:35:08.750 [http-nio-8080-exec-4] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-06-18 10:35:09.372 [http-nio-8080-exec-4] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-18 10:35:10.883 [http-nio-8080-exec-4] ERROR c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request error,
+org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1602)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1533)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1358)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1341)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:1059)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:398)
+	at org.springframework.data.redis.core.RedisConnectionUtils.fetchConnection(RedisConnectionUtils.java:193)
+	at org.springframework.data.redis.core.RedisConnectionUtils.doGetConnection(RedisConnectionUtils.java:144)
+	at org.springframework.data.redis.core.RedisConnectionUtils.getConnection(RedisConnectionUtils.java:105)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:393)
+	at org.springframework.data.redis.core.RedisTemplate.execute(RedisTemplate.java:373)
+	at org.springframework.data.redis.core.RedisTemplate.doWithKeys(RedisTemplate.java:785)
+	at org.springframework.data.redis.core.RedisTemplate.hasKey(RedisTemplate.java:571)
+	at com.zx.xiaohongshu.auth.service.impl.VerificationCodeServiceImpl.send(VerificationCodeServiceImpl.java:45)
+	at com.zx.xiaohongshu.auth.controller.VerificationCodeController.send(VerificationCodeController.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:89)
+	at com.zx.framework.biz.operationlog.aspect.ApiOperationLogAspect.doAround(ApiOperationLogAspect.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:623)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:71)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:173)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:752)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:703)
+	at com.zx.xiaohongshu.auth.controller.VerificationCodeController$$SpringCGLIB$$0.send(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at com.alibaba.druid.support.jakarta.WebStatFilter.doFilter(WebStatFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at cn.dev33.satoken.filter.SaPathCheckFilterForJakartaServlet.doFilter(SaPathCheckFilterForJakartaServlet.java:55)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.springframework.data.redis.connection.PoolException: Could not get a resource from the pool
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.getConnection(LettucePoolingConnectionProvider.java:105)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1531)
+	... 93 common frames omitted
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to 127.0.0.1/<unresolved>:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:350)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:111)
+	at java.base/java.util.Optional.orElseGet(Optional.java:364)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:111)
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.lambda$getConnection$0(LettucePoolingConnectionProvider.java:93)
+	at io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory.create(ConnectionPoolSupport.java:211)
+	at io.lettuce.core.support.ConnectionPoolSupport$RedisPooledObjectFactory.create(ConnectionPoolSupport.java:201)
+	at org.apache.commons.pool2.BasePooledObjectFactory.makeObject(BasePooledObjectFactory.java:70)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:571)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:298)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:223)
+	at io.lettuce.core.support.ConnectionPoolSupport$1.borrowObject(ConnectionPoolSupport.java:122)
+	at io.lettuce.core.support.ConnectionPoolSupport$1.borrowObject(ConnectionPoolSupport.java:117)
+	at org.springframework.data.redis.connection.lettuce.LettucePoolingConnectionProvider.getConnection(LettucePoolingConnectionProvider.java:99)
+	... 94 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
+	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:672)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:946)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:776)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-06-18 10:36:13.802 [http-nio-8080-exec-9] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-18 10:36:14.033 [http-nio-8080-exec-9] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:18122322622,已发送验证码:【017354】
+2024-06-18 10:36:14.039 [AuthExecutor-1] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 开始短信发送 ,phone:18122322622,signName:阿里云短信测试,templateCode:SMS_154950909,templateParam:{"code":"017354"}
+2024-06-18 10:36:14.063 [http-nio-8080-exec-9] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:258ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-18 10:36:16.592 [AuthExecutor-1] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 短信发送成功,response:{"headers":{"access-control-allow-origin":"*","date":"Tue, 18 Jun 2024 02:36:18 GMT","content-length":"110","keep-alive":"timeout=25","x-acs-request-id":"E09DD7ED-9C9F-5175-8DED-677F3009C4B8","connection":"keep-alive","content-type":"application/json;charset=utf-8","etag":"1en0SJjqVxf2pFSRfuHDDuw0","access-control-expose-headers":"*","x-acs-trace-id":"39e7414135d5ba86202985dd64e10552"},"statusCode":200,"body":{"bizId":"159119718678178415^0","code":"OK","message":"OK","requestId":"E09DD7ED-9C9F-5175-8DED-677F3009C4B8"}}
+2024-06-18 10:40:18.465 [http-nio-8080-exec-4] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[用户登录/注册]，入参:{"phone":"18122322622","code":"017354","password":null,"type":1},请求类:UserController,请求方法:loginAndRegister==================
+2024-06-18 10:40:18.485 [http-nio-8080-exec-4] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /user/login request fail,errorCode: AUTH-20001,errorMessage: 验证码错误
+2024-06-18 10:41:52.259 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-18 10:41:52.266 [http-nio-8080-exec-3] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:18122322622,已发送验证码:【148572】
+2024-06-18 10:41:52.267 [AuthExecutor-2] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 开始短信发送 ,phone:18122322622,signName:阿里云短信测试,templateCode:SMS_154950909,templateParam:{"code":"148572"}
+2024-06-18 10:41:52.271 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:13ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-18 10:41:53.261 [AuthExecutor-2] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 短信发送成功,response:{"headers":{"access-control-allow-origin":"*","date":"Tue, 18 Jun 2024 02:41:55 GMT","content-length":"110","keep-alive":"timeout=25","x-acs-request-id":"2A5B0774-C5C8-5E9C-BA6D-252954A272FE","connection":"keep-alive","content-type":"application/json;charset=utf-8","etag":"1vWxoqYqsy416cP5ZxFmGww0","access-control-expose-headers":"*","x-acs-trace-id":"3893073021937bb3acd42336c1482a3e"},"statusCode":200,"body":{"bizId":"898002418678515381^0","code":"OK","message":"OK","requestId":"2A5B0774-C5C8-5E9C-BA6D-252954A272FE"}}
+2024-06-18 10:42:09.104 [http-nio-8080-exec-6] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[用户登录/注册]，入参:{"phone":"18122322622","code":"148572","password":null,"type":1},请求类:UserController,请求方法:loginAndRegister==================
+2024-06-18 10:42:09.241 [http-nio-8080-exec-6] DEBUG c.z.x.a.domain.mapper.UserDOMapper.selectByPhone - ==>  Preparing: select id, password from t_user where phone = ?
+2024-06-18 10:42:09.965 [http-nio-8080-exec-6] DEBUG c.z.x.a.domain.mapper.UserDOMapper.selectByPhone - ==> Parameters: 18122322622(String)
+2024-06-18 10:42:10.122 [http-nio-8080-exec-6] DEBUG c.z.x.a.domain.mapper.UserDOMapper.selectByPhone - <==      Total: 0
+2024-06-18 10:42:10.131 [http-nio-8080-exec-6] INFO  c.zx.xiaohongshu.auth.service.impl.UserServiceImpl - ==>用户是否注册,phone:18122322622,userDO:null
+2024-06-18 10:42:10.147 [http-nio-8080-exec-6] DEBUG c.z.x.auth.domain.mapper.UserDOMapper.insert - ==>  Preparing: insert into t_user (xiaohongshu_id, `password`, nickname, avatar, birthday, background_img, phone, sex, `status`, introduction, create_time, update_time, is_deleted) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+2024-06-18 10:42:10.548 [http-nio-8080-exec-6] DEBUG c.z.x.auth.domain.mapper.UserDOMapper.insert - ==> Parameters: 1(String), null, 小红薯1(String), null, null, null, 18122322622(String), null, 0(Integer), null, 2024-06-18T10:42:10.143847300(LocalDateTime), 2024-06-18T10:42:10.143847300(LocalDateTime), false(Boolean)
+2024-06-18 10:42:10.579 [http-nio-8080-exec-6] DEBUG c.z.x.auth.domain.mapper.UserDOMapper.insert - <==    Updates: 1
+2024-06-18 10:42:10.591 [http-nio-8080-exec-6] DEBUG c.z.x.auth.domain.mapper.UserRoleDOMapper.insert - ==>  Preparing: insert into t_user_role_rel (id, user_id, role_id, create_time, update_time, is_deleted ) values (?, ?, ?, ?, ?, ? )
+2024-06-18 10:42:10.596 [http-nio-8080-exec-6] DEBUG c.z.x.auth.domain.mapper.UserRoleDOMapper.insert - ==> Parameters: null, 1(Long), 1(Long), 2024-06-18T10:42:10.589963600(LocalDateTime), 2024-06-18T10:42:10.589963600(LocalDateTime), false(Boolean)
+2024-06-18 10:42:10.625 [http-nio-8080-exec-6] DEBUG c.z.x.auth.domain.mapper.UserRoleDOMapper.insert - <==    Updates: 1
+2024-06-18 10:42:10.879 [http-nio-8080-exec-6] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[用户登录/注册],耗时:1775ms,出参:{"success":true,"message":null,"errorCode":null,"data":"947a87a7-4591-4716-9a6a-df7b1196add4"}==============================
+2024-06-18 10:42:39.682 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /127.0.0.1:6379
+2024-06-18 10:42:39.709 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection closed prematurely
+io.lettuce.core.RedisConnectionException: Connection closed prematurely
+	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81)
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:813)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-06-18 10:42:48.777 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:42:48.781 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:42:57.075 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:42:57.080 [lettuce-nioEventLoop-4-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:43:13.480 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:43:13.483 [lettuce-nioEventLoop-4-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:43:43.574 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:43:43.578 [lettuce-nioEventLoop-4-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:44:13.672 [lettuce-eventExecutorLoop-1-10] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:44:13.676 [lettuce-nioEventLoop-4-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:44:43.778 [lettuce-eventExecutorLoop-1-12] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:44:43.781 [lettuce-nioEventLoop-4-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:45:13.871 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:45:13.875 [lettuce-nioEventLoop-4-9] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:45:43.971 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:45:43.975 [lettuce-nioEventLoop-4-10] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:46:14.073 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:46:14.076 [lettuce-nioEventLoop-4-11] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:46:44.179 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:46:44.182 [lettuce-nioEventLoop-4-12] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:47:14.272 [lettuce-eventExecutorLoop-1-10] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:47:14.275 [lettuce-nioEventLoop-4-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:47:44.373 [lettuce-eventExecutorLoop-1-12] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:47:44.376 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:48:14.472 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:48:14.475 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:48:44.582 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:48:44.586 [lettuce-nioEventLoop-4-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:49:14.672 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:49:14.675 [lettuce-nioEventLoop-4-5] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:49:44.775 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:49:44.779 [lettuce-nioEventLoop-4-6] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:50:14.871 [lettuce-eventExecutorLoop-1-10] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:50:14.875 [lettuce-nioEventLoop-4-7] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:50:44.971 [lettuce-eventExecutorLoop-1-12] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:50:44.975 [lettuce-nioEventLoop-4-8] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:51:15.072 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:51:15.076 [lettuce-nioEventLoop-4-9] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:51:45.181 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:51:45.184 [lettuce-nioEventLoop-4-10] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:52:15.272 [lettuce-eventExecutorLoop-1-6] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:52:15.276 [lettuce-nioEventLoop-4-11] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:52:45.379 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:52:45.382 [lettuce-nioEventLoop-4-12] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:53:15.480 [lettuce-eventExecutorLoop-1-10] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:53:15.484 [lettuce-nioEventLoop-4-1] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:53:45.571 [lettuce-eventExecutorLoop-1-12] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:53:45.575 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:54:15.677 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:54:15.678 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:54:45.771 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 10:54:45.775 [lettuce-nioEventLoop-4-4] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 10:54:58.793 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-18 10:54:58.798 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-18 14:23:34.074 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 24908 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-18 14:23:34.077 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-18 14:23:36.571 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-18 14:23:36.576 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-18 14:23:36.644 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+2024-06-18 14:23:38.278 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-18 14:23:38.297 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-18 14:23:38.297 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-18 14:23:38.456 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-18 14:23:38.456 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4263 ms
+2024-06-18 14:23:38.654 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-18 14:23:39.280 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-18 14:23:41.086 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-18 14:23:41.103 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 8.13 seconds (process running for 9.173)
+2024-06-18 14:24:13.063 [http-nio-8080-exec-6] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-18 14:24:13.064 [http-nio-8080-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-18 14:24:13.066 [http-nio-8080-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2024-06-18 14:24:13.978 [http-nio-8080-exec-6] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[用户登录/注册]，入参:{"phone":"18122322622","code":"","password":null,"type":1},请求类:UserController,请求方法:loginAndRegister==================
+2024-06-18 14:24:15.798 [http-nio-8080-exec-6] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /user/login request fail,errorCode: AUTH-20001,errorMessage: 验证码错误
+2024-06-18 14:24:29.304 [lettuce-eventExecutorLoop-1-2] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /127.0.0.1:6379
+2024-06-18 14:24:29.327 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection closed prematurely
+io.lettuce.core.RedisConnectionException: Connection closed prematurely
+	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81)
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:813)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-06-18 14:24:38.393 [lettuce-eventExecutorLoop-1-1] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 14:24:38.397 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 14:24:46.598 [lettuce-eventExecutorLoop-1-4] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-18 14:24:46.602 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-18 14:24:53.836 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-18 14:24:53.846 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

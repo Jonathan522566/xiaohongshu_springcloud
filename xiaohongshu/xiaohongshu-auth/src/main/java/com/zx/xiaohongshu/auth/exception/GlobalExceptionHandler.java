@@ -68,6 +68,25 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 捕获guava 参数效验异常->service login 判断code是否为空
+     * @return
+     */
+    @ExceptionHandler({IllegalArgumentException.class})
+    @ResponseBody
+    public Response<Object> handleIllegalArgumentException(HttpServletRequest request,IllegalArgumentException e){
+        //参数错误码
+        String errorCode=ResponseCodeEnum.PARAM_NOT_VALID.getErrorCode();
+        //错误信息
+        String errorMessage=e.getMessage();
+
+        log.warn("{} request error,errorCode:{},errorMessage:{} ",
+                request.getRequestURI(),errorCode,errorMessage);
+
+        return Response.fail(errorCode,errorMessage);
+
+    }
+
+    /**
      * 其他类型异常--捕获controller层代码异常
      * @param request
      * @param e

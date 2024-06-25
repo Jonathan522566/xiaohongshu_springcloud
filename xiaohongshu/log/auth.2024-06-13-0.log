@@ -35,3 +35,111 @@
 2024-06-13 07:04:42.586 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 2.862 seconds (process running for 3.346)
 2024-06-13 07:04:56.685 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 2024-06-13 07:04:56.690 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-13 17:30:45.027 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 11764 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-13 17:30:45.029 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-13 17:30:45.652 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-13 17:30:45.655 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-13 17:30:45.683 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-06-13 17:30:46.380 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-13 17:30:46.395 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-13 17:30:46.396 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-13 17:30:46.488 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-13 17:30:46.488 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1422 ms
+2024-06-13 17:30:46.575 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-13 17:30:46.890 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-13 17:30:47.753 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-13 17:30:47.759 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.242 seconds (process running for 3.816)
+2024-06-13 17:33:58.446 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 17:33:58.446 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-06-13 17:33:58.447 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2024-06-13 17:33:58.584 [http-nio-8080-exec-1] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-13 17:33:58.950 [http-nio-8080-exec-1] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:18122322622,已发送验证码:【930013】
+2024-06-13 17:33:58.952 [AuthExecutor-1] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 开始短信发送 ,phone:18122322622,signName:阿里云短信测试,templateCode:SMS_154950909,templateParam:{"code":"930013"}
+2024-06-13 17:33:58.960 [http-nio-8080-exec-1] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:384ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-13 17:33:59.218 [AuthExecutor-1] ERROR com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==>短信发送错误：
+com.aliyun.tea.TeaUnretryableException: 不知道这样的主机。 (dysmsapi.aliyuncs.com)
+	at com.aliyun.teaopenapi.Client.doRequest(Client.java:865)
+	at com.aliyun.teaopenapi.Client.callApi(Client.java:1022)
+	at com.aliyun.dysmsapi20170525.Client.sendSmsWithOptions(Client.java:1596)
+	at com.zx.xiaohongshu.auth.sms.AliyunSmsHelper.sendMessage(AliyunSmsHelper.java:41)
+	at com.zx.xiaohongshu.auth.service.impl.VerificationCodeServiceImpl.lambda$send$0(VerificationCodeServiceImpl.java:61)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: com.aliyun.tea.TeaRetryableException: 不知道这样的主机。 (dysmsapi.aliyuncs.com)
+	at com.aliyun.tea.Tea.doAction(Tea.java:70)
+	at com.aliyun.tea.Tea.doAction(Tea.java:82)
+	at com.aliyun.teaopenapi.Client.doRequest(Client.java:784)
+	... 9 common frames omitted
+Caused by: java.net.UnknownHostException: 不知道这样的主机。 (dysmsapi.aliyuncs.com)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.InetAddress$PlatformNameService.lookupAllHostAddr(InetAddress.java:933)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1543)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:852)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1532)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1384)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1305)
+	at okhttp3.Dns$Companion$DnsSystem.lookup(Dns.kt:49)
+	at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:164)
+	at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:129)
+	at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+	at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:205)
+	at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:106)
+	at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:74)
+	at okhttp3.internal.connection.RealCall.initExchange$okhttp(RealCall.kt:255)
+	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:32)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:95)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:83)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:76)
+	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:109)
+	at okhttp3.internal.connection.RealCall.getResponseWithInterceptorChain$okhttp(RealCall.kt:201)
+	at okhttp3.internal.connection.RealCall.execute(RealCall.kt:154)
+	at com.aliyun.tea.Tea.doAction(Tea.java:67)
+	... 11 common frames omitted
+2024-06-13 17:34:24.993 [http-nio-8080-exec-3] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-13 17:34:24.999 [http-nio-8080-exec-3] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail,errorCode: AUTH-20000,errorMessage: 请求太频繁，请3分钟后再试
+2024-06-13 17:34:29.738 [http-nio-8080-exec-5] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-13 17:34:29.741 [http-nio-8080-exec-5] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail,errorCode: AUTH-20000,errorMessage: 请求太频繁，请3分钟后再试
+2024-06-13 17:36:32.886 [http-nio-8080-exec-7] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-13 17:36:32.889 [http-nio-8080-exec-7] WARN  c.z.x.auth.exception.GlobalExceptionHandler - /verification/code/send request fail,errorCode: AUTH-20000,errorMessage: 请求太频繁，请3分钟后再试
+2024-06-13 17:37:16.971 [http-nio-8080-exec-8] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求开始:[发送短信验证码]，入参:{"phone":"18122322622"},请求类:VerificationCodeController,请求方法:send==================
+2024-06-13 17:37:16.973 [http-nio-8080-exec-8] INFO  c.z.x.a.service.impl.VerificationCodeServiceImpl - ==>手机号:18122322622,已发送验证码:【075996】
+2024-06-13 17:37:16.974 [AuthExecutor-2] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 开始短信发送 ,phone:18122322622,signName:阿里云短信测试,templateCode:SMS_154950909,templateParam:{"code":"075996"}
+2024-06-13 17:37:16.975 [http-nio-8080-exec-8] INFO  c.z.f.b.operationlog.aspect.ApiOperationLogAspect - ===========请求结束:[发送短信验证码],耗时:5ms,出参:{"success":true,"message":null,"errorCode":null,"data":null}==============================
+2024-06-13 17:37:17.805 [AuthExecutor-2] INFO  com.zx.xiaohongshu.auth.sms.AliyunSmsHelper - ==> 短信发送成功,response:{"headers":{"access-control-allow-origin":"*","date":"Thu, 13 Jun 2024 09:37:18 GMT","content-length":"110","keep-alive":"timeout=25","x-acs-request-id":"2F0BBC8A-E3D4-5339-9ED2-00C2C4C24BC5","connection":"keep-alive","content-type":"application/json;charset=utf-8","etag":"1jesgANjaez5cFcoWybBY1w0","access-control-expose-headers":"*","x-acs-trace-id":"16f9a7841b781e38b9f010cd32d734d9"},"statusCode":200,"body":{"bizId":"762022218271438630^0","code":"OK","message":"OK","requestId":"2F0BBC8A-E3D4-5339-9ED2-00C2C4C24BC5"}}
+2024-06-13 17:38:03.342 [lettuce-eventExecutorLoop-1-8] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was /127.0.0.1:6379
+2024-06-13 17:38:03.351 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection closed prematurely
+io.lettuce.core.RedisConnectionException: Connection closed prematurely
+	at io.lettuce.core.protocol.RedisHandshakeHandler.channelInactive(RedisHandshakeHandler.java:91)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelInactive(ChannelInboundHandlerAdapter.java:81)
+	at io.lettuce.core.ChannelGroupListener.channelInactive(ChannelGroupListener.java:69)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:305)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelInactive(AbstractChannelHandlerContext.java:274)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelInactive(DefaultChannelPipeline.java:1405)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:301)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelInactive(AbstractChannelHandlerContext.java:281)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelInactive(DefaultChannelPipeline.java:901)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe$7.run(AbstractChannel.java:813)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:566)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-06-13 17:38:12.444 [lettuce-eventExecutorLoop-1-7] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-13 17:38:12.445 [lettuce-nioEventLoop-4-2] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-13 17:38:20.645 [lettuce-eventExecutorLoop-1-10] INFO  io.lettuce.core.protocol.ConnectionWatchdog - Reconnecting, last destination was 127.0.0.1/<unresolved>:6379
+2024-06-13 17:38:20.646 [lettuce-nioEventLoop-4-3] WARN  io.lettuce.core.protocol.ConnectionWatchdog - Cannot reconnect to [127.0.0.1/<unresolved>:6379]: Connection refused: no further information: /127.0.0.1:6379
+2024-06-13 17:38:27.812 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-13 17:38:27.828 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

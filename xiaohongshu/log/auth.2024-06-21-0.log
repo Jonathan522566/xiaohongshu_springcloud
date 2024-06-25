@@ -1,0 +1,98 @@
+2024-06-21 11:13:52.728 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 12548 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-21 11:13:52.730 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-21 11:13:53.472 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-21 11:13:53.476 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-21 11:13:53.508 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-06-21 11:13:54.296 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-21 11:13:54.320 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-21 11:13:54.320 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-21 11:13:54.431 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-21 11:13:54.432 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1645 ms
+2024-06-21 11:13:54.561 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-21 11:13:54.941 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-21 11:13:56.036 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-21 11:13:56.045 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.889 seconds (process running for 4.597)
+2024-06-21 11:13:56.047 [main] INFO  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>服务启动,开始同步角色权限数据到 Redis 中.....
+2024-06-21 11:13:56.470 [main] DEBUG c.z.x.a.d.mapper.RoleDOMapper.selectEnabledList - ==>  Preparing: select id,role_key,role_name from t_role where status=0 and is_deleted=0
+2024-06-21 11:13:56.620 [main] DEBUG c.z.x.a.d.mapper.RoleDOMapper.selectEnabledList - ==> Parameters: 
+2024-06-21 11:13:56.651 [main] DEBUG c.z.x.a.d.mapper.RoleDOMapper.selectEnabledList - <==      Total: 1
+2024-06-21 11:13:56.671 [main] ERROR c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==> 同步角色权限数据到 Redis 中失败:
+org.mybatis.spring.MyBatisSystemException: null
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:97)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at jdk.proxy2/jdk.proxy2.$Proxy72.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:224)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:147)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:80)
+	at org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:142)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:86)
+	at jdk.proxy2/jdk.proxy2.$Proxy83.selectByRoleIds(Unknown Source)
+	at com.zx.xiaohongshu.auth.runner.PushRolePermissions2RedisRunner.run(PushRolePermissions2RedisRunner.java:65)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:748)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1291)
+	at com.zx.xiaohongshu.auth.XiaohongshuAuthApplication.main(XiaohongshuAuthApplication.java:12)
+Caused by: org.apache.ibatis.binding.BindingException: Parameter 'roleIds' not found. Available parameters are [arg0, collection, list]
+	at org.apache.ibatis.binding.MapperMethod$ParamMap.get(MapperMethod.java:210)
+	at org.apache.ibatis.scripting.xmltags.DynamicContext$ContextAccessor.getProperty(DynamicContext.java:119)
+	at org.apache.ibatis.ognl.OgnlRuntime.getProperty(OgnlRuntime.java:3344)
+	at org.apache.ibatis.ognl.ASTProperty.getValueBody(ASTProperty.java:121)
+	at org.apache.ibatis.ognl.SimpleNode.evaluateGetValueBody(SimpleNode.java:212)
+	at org.apache.ibatis.ognl.SimpleNode.getValue(SimpleNode.java:258)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:586)
+	at org.apache.ibatis.ognl.Ognl.getValue(Ognl.java:550)
+	at org.apache.ibatis.scripting.xmltags.OgnlCache.getValue(OgnlCache.java:46)
+	at org.apache.ibatis.scripting.xmltags.ExpressionEvaluator.evaluateIterable(ExpressionEvaluator.java:54)
+	at org.apache.ibatis.scripting.xmltags.ForEachSqlNode.apply(ForEachSqlNode.java:71)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.lambda$apply$0(MixedSqlNode.java:32)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.apache.ibatis.scripting.xmltags.MixedSqlNode.apply(MixedSqlNode.java:32)
+	at org.apache.ibatis.scripting.xmltags.DynamicSqlSource.getBoundSql(DynamicSqlSource.java:39)
+	at org.apache.ibatis.mapping.MappedStatement.getBoundSql(MappedStatement.java:320)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:88)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:154)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:142)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 14 common frames omitted
+2024-06-21 11:14:19.360 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-21 11:14:19.367 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2024-06-21 11:17:51.862 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 11972 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-21 11:17:51.864 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-21 11:17:52.561 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-21 11:17:52.564 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-21 11:17:52.594 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2024-06-21 11:17:53.323 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-21 11:17:53.335 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-21 11:17:53.335 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-21 11:17:53.424 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-21 11:17:53.425 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1523 ms
+2024-06-21 11:17:53.510 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-21 11:17:53.790 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-21 11:17:54.741 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-21 11:17:54.748 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.401 seconds (process running for 3.878)
+2024-06-21 11:17:54.749 [main] INFO  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>服务启动,开始同步角色权限数据到 Redis 中.....
+2024-06-21 11:17:55.110 [main] WARN  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>角色权限数据已经同步至Redis中,不再同步...
+2024-06-21 11:19:41.180 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-21 11:19:44.268 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 1544 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-21 11:19:44.270 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-21 11:19:44.886 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-21 11:19:44.888 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-21 11:19:44.916 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-06-21 11:19:45.579 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-21 11:19:45.588 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-21 11:19:45.589 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-21 11:19:45.676 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-21 11:19:45.676 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1370 ms
+2024-06-21 11:19:45.761 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-21 11:19:46.039 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-21 11:19:47.082 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-21 11:19:47.090 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 3.346 seconds (process running for 3.791)
+2024-06-21 11:19:47.093 [main] INFO  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>服务启动,开始同步角色权限数据到 Redis 中.....
+2024-06-21 11:19:47.457 [main] WARN  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>角色权限数据已经同步至Redis中,不再同步...

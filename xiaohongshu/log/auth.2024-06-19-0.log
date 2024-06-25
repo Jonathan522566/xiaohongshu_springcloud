@@ -1,0 +1,18 @@
+2024-06-19 09:54:17.424 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Starting XiaohongshuAuthApplication using Java 17.0.11 with PID 13076 (C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu\xiaohongshu-auth\target\classes started by 0 in C:\Users\0\Desktop\大学资料\专业课\小红书项目_springcloud\xiaohongshu)
+2024-06-19 09:54:17.427 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - The following 1 profile is active: "dev"
+2024-06-19 09:54:18.661 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2024-06-19 09:54:18.668 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-06-19 09:54:18.722 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2024-06-19 09:54:19.726 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-06-19 09:54:19.738 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2024-06-19 09:54:19.739 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2024-06-19 09:54:19.896 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-06-19 09:54:19.896 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2408 ms
+2024-06-19 09:54:20.052 [main] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2024-06-19 09:54:20.479 [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2024-06-19 09:54:21.913 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2024-06-19 09:54:21.925 [main] INFO  c.zx.xiaohongshu.auth.XiaohongshuAuthApplication - Started XiaohongshuAuthApplication in 5.49 seconds (process running for 6.306)
+2024-06-19 09:54:21.928 [main] INFO  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>服务启动,开始同步角色权限数据到 Redis 中.....
+2024-06-19 09:54:21.928 [main] INFO  c.z.x.auth.runner.PushRolePermissions2RedisRunner - ==>服务启动,成功同步角色权限数据到Redis中.....
+2024-06-19 09:54:39.405 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2024-06-19 09:54:39.416 [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
